@@ -4,6 +4,7 @@
  */
 
 #include <nds.h>
+#include <nds/registers_alt.h>
 
 #ifdef USING_SDL
 
@@ -422,11 +423,9 @@ void woopsiVblFunc() {
 }
 
 void initWoopsiGfxMode() {
-	powerON(POWER_ALL_2D);
+	powerOn(POWER_ALL_2D);
 
-	irqInit();
 	irqSet(IRQ_VBLANK, woopsiVblFunc);
-	irqEnable(IRQ_VBLANK);
 
 	videoSetMode( MODE_5_2D | DISPLAY_BG3_ACTIVE );
 	videoSetModeSub( MODE_5_2D | DISPLAY_BG3_ACTIVE );	//sub bg 0 will be used to print text

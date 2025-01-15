@@ -5,6 +5,10 @@
 
 #define DYNAMIC_ARRAY_SIZE 100
 
+// TODO: DynamicArray is already defined in libnds, this hack will let us build
+// the program anyway.
+#define DynamicArray DynArray
+
 /**
  * Class providing a dynamic array; that is, an array that will automatically
  * grow to accommodate new data.  It provides a fast way to randomly access

@@ -218,7 +218,7 @@ bool Eigenmath::handleEvent(const EventArgs& e) {
 						back();	
 				} 
 				// Append key value to output box if the last key was not a modifier
-				else if (mkey->getValue() != '\0') {
+				else if (*mkey->getValue() != '\0') {
 					const char *ckey = pkey;
 					
 					if(script_top)

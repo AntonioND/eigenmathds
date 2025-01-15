@@ -9,6 +9,8 @@
 	Output is formatted in display.cpp
 */
 
+#if 0
+
 #include "defs.h"
 
 #define BUFLEN 100000
@@ -88,3 +90,5 @@ void
 eval_sample(void)
 {
 }
+
+#endif

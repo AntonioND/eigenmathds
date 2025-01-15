@@ -148,6 +148,6 @@ const char *MathKey::getValue() const {
 			return "\12"; 
 		default:
 			// Return null chars for modifier keys
-			return '\0';
+			return "\0";
 	}
 }

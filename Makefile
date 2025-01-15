@@ -40,7 +40,7 @@ NITROFSDIR	:=
 # Defines passed to all files
 # ---------------------------
 
-DEFINES		:=
+DEFINES		:= -DLINUX
 
 # Libraries
 # ---------
@@ -116,7 +116,9 @@ ARCH		:= -mthumb -mcpu=arm946e-s+nofp
 
 SPECS		:= $(BLOCKSDS)/sys/crts/ds_arm9.specs
 
-WARNFLAGS	:= -Wall
+# TODO: Fix warnings
+WARNFLAGS	:= -Wall \
+			   -Wno-narrowing
 
 ifeq ($(SOURCES_CPP),)
 	LIBS	+= -lc
