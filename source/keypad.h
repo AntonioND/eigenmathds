@@ -2,7 +2,7 @@
 #define _KEYPAD_H_
 
 #include <nds.h>
-#include "woopsi\amigawindow.h"
+#include "woopsi/amigawindow.h"
 
 namespace WoopsiUI {
 

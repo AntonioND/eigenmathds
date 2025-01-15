@@ -2,7 +2,7 @@
 #define _MATHKEY_H_
 
 #include <nds.h>
-#include "woopsi\button.h"
+#include "woopsi/button.h"
 
 namespace WoopsiUI {
 	

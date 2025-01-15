@@ -1,9 +1,9 @@
 #include "keypad.h"
 #include "mathkey.h"
-#include "woopsi\button.h"
-#include "woopsi\woopsikey.h"
-#include "woopsi\woopsi.h"
-#include "woopsi\woopsitimer.h"
+#include "woopsi/button.h"
+#include "woopsi/woopsikey.h"
+#include "woopsi/woopsi.h"
+#include "woopsi/woopsitimer.h"
 
 
 #define INTEGRAL "\227"

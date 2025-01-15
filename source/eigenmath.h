@@ -5,11 +5,11 @@
 #include "keypad.h"
 #include "mathkey.h"
 
-#include "woopsi\woopsi.h"
-#include "woopsi\eventhandler.h"
-#include "woopsi\woopsikeyboard.h"
-#include "woopsi\multilinetextbox.h"
-#include "woopsi\woopsiheaders.h"
+#include "woopsi/woopsi.h"
+#include "woopsi/eventhandler.h"
+#include "woopsi/woopsikeyboard.h"
+#include "woopsi/multilinetextbox.h"
+#include "woopsi/woopsiheaders.h"
 
 #define MAX_HIST 150
 
