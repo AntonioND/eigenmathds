@@ -1,0 +1,15 @@
+PAGfx Converter, by Mollusk     www.palib.com
+If you have suggestions, problems, or anything, please mail me at mollusk@palib.info
+
+Converting PAGfx.ini
+Transparent Color : Magenta
+
+2 backgrounds :
+  font6px : 16bit, 128x36, -> font6px_Bitmap
+  font10px : 16bit, 256x60, -> font10px_Bitmap
+
+0 palettes :
+
+Converted in 0 minutes 2 seconds
+
+Finished !
