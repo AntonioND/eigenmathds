@@ -13,7 +13,7 @@ ARM_NONE_EABI_PATH	?= $(WONDERFUL_TOOLCHAIN)/toolchain/gcc-arm-none-eabi/bin/
 
 NAME		:= eigenmathds
 
-GAME_TITLE	:= Eigenmath DS
+GAME_TITLE	:= Eigenmath DS v1.1
 GAME_SUBTITLE	:= using Eigenmath 136
 GAME_AUTHOR	:= eigenmatds.sourceforge.net
 GAME_ICON	:= icon.png
