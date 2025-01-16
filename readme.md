@@ -7,6 +7,8 @@ systems such as Texas Instruments or HP calculators.
 
 Download the latest version [here](https://github.com/AntonioND/eigenmathds).
 
+![Screenshot](screenshot.png)
+
 ## Instructions
 
 - Terminal output mode:
