@@ -722,11 +722,11 @@ void Gadget::draw() {
 
 		// Create pointer to a vector to store the overlapped rectangles
 		// We can discard this later as we don't need it
-		DynamicArray<Rect>* invisibleRects = new DynamicArray<Rect>();
+		WDynamicArray<Rect>* invisibleRects = new WDynamicArray<Rect>();
 
 		// Create a pointer to store rects that are not overlapped by
 		// children
-		DynamicArray<Rect>* visibleRects = new DynamicArray<Rect>();
+		WDynamicArray<Rect>* visibleRects = new WDynamicArray<Rect>();
 
 		// Copy all visible regions into the new vector
 		for (s32 i = 0; i < _visibleRegionCache.size(); i++) {
@@ -762,7 +762,7 @@ void Gadget::draw() {
 
 // Redraw any regions that have been overlapped
 // Called when erasing a gadget higher up the vector
-void Gadget::redrawDirty(DynamicArray<Rect>* invalidRects, Gadget* sender) {
+void Gadget::redrawDirty(WDynamicArray<Rect>* invalidRects, Gadget* sender) {
 
 	if (isDrawingEnabled()) {
 
@@ -771,7 +771,7 @@ void Gadget::redrawDirty(DynamicArray<Rect>* invalidRects, Gadget* sender) {
 	
 		// Create an array that will contain all of the rects from the
 		// original array that overlap this gadget
-		DynamicArray<Rect>* overlappingRects = new DynamicArray<Rect>();
+		WDynamicArray<Rect>* overlappingRects = new WDynamicArray<Rect>();
 
 		// Remove any non-overlapping rectangles from dirty vector and add to
 		// overlapping vector
@@ -779,7 +779,7 @@ void Gadget::redrawDirty(DynamicArray<Rect>* invalidRects, Gadget* sender) {
 
 		// Create an array that will contain all of the rects that overlap this
 		// gadget clipped to its parent
-		DynamicArray<Rect>* rectsToDraw = new DynamicArray<Rect>();
+		WDynamicArray<Rect>* rectsToDraw = new WDynamicArray<Rect>();
 		
 		// Split from overlappingRects into rectsToDraw, giving us an array
 		// of rects that overlap only the visible portions of this gadget
@@ -802,7 +802,7 @@ void Gadget::redrawDirty(DynamicArray<Rect>* invalidRects, Gadget* sender) {
 	}
 }
 
-void Gadget::redrawDirtyChildren(DynamicArray<Rect>* invalidRects, Gadget* sender) {
+void Gadget::redrawDirtyChildren(WDynamicArray<Rect>* invalidRects, Gadget* sender) {
 
 	for (s32 i = _gadgets.size() - 1; i > -1 ; i--) {
 		if (invalidRects->size() > 0) {
@@ -819,7 +819,7 @@ void Gadget::redrawDirtyChildren(DynamicArray<Rect>* invalidRects, Gadget* sende
 // Remove any rectangles that this gadget overlaps from the visible vector
 // and add them to the invisible vector
 // Called when drawing a gadget to check that no higher gadgets get overwritten
-void Gadget::removeOverlappedRects(DynamicArray<Rect>* visibleRects, DynamicArray<Rect>* invisibleRects, Gadget* gadget) {
+void Gadget::removeOverlappedRects(WDynamicArray<Rect>* visibleRects, WDynamicArray<Rect>* invisibleRects, Gadget* gadget) {
 
 	// Locate gadget in the list; we add one to the index to
 	// ensure that we deal with the next gadget up in the z-order
@@ -848,7 +848,7 @@ void Gadget::removeOverlappedRects(DynamicArray<Rect>* visibleRects, DynamicArra
 
 // Split rectangles into valid and invalid sub-rectangles
 // Used when calculating which portions of a gadget to draw
-void Gadget::splitRectangles(DynamicArray<Rect>* invalidRects, DynamicArray<Rect>* validRects, Gadget* sender) {
+void Gadget::splitRectangles(WDynamicArray<Rect>* invalidRects, WDynamicArray<Rect>* validRects, Gadget* sender) {
 
 	// Check for collisions with any rectangles in the vector
 	for (s32 i = 0; i < invalidRects->size(); i++) {
@@ -1994,7 +1994,7 @@ void Gadget::cacheVisibleRects() {
 
 		// Create pointer to a vector to store the overlapped rectangles
 		// We can discard this later as we don't need it
-		DynamicArray<Rect>* invisibleRects = new DynamicArray<Rect>();
+		WDynamicArray<Rect>* invisibleRects = new WDynamicArray<Rect>();
 
 		// Copy the clipped gadget dimensions into a rect
 		Rect rect;
@@ -2080,7 +2080,7 @@ GraphicsPort* Gadget::newInternalGraphicsPort(Rect clipRect) {
 }
 
 // Return vector of visible rects
-DynamicArray<Gadget::Rect>* Gadget::getVisibleRectCache() {
+WDynamicArray<Gadget::Rect>* Gadget::getVisibleRectCache() {
 	return &_visibleRegionCache;
 }
 

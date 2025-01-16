@@ -5,10 +5,6 @@
 
 #define DYNAMIC_ARRAY_SIZE 100
 
-// TODO: DynamicArray is already defined in libnds, this hack will let us build
-// the program anyway.
-#define DynamicArray DynArray
-
 /**
  * Class providing a dynamic array; that is, an array that will automatically
  * grow to accommodate new data.  It provides a fast way to randomly access
@@ -23,18 +19,18 @@
  * very inexpensive.
  */
 template <class T>
-class DynamicArray {
+class WDynamicArray {
 public:
 
 	/**
 	 * Constructor.
 	 */
-	inline DynamicArray();
+	inline WDynamicArray();
 
 	/**
 	 * Destructor.
 	 */
-	inline ~DynamicArray();
+	inline ~WDynamicArray();
 
 	/**
 	 * Get the size of the array.
@@ -110,24 +106,24 @@ private:
 };
 
 template <class T>
-DynamicArray<T>::DynamicArray() {
+WDynamicArray<T>::WDynamicArray() {
 	_size = 0;
 	_reservedSize = DYNAMIC_ARRAY_SIZE;
 	_data = new T[_reservedSize];
 }
 
 template <class T>
-DynamicArray<T>::~DynamicArray() {
+WDynamicArray<T>::~WDynamicArray() {
 	delete [] _data;
 }
 
 template <class T>
-const s32 DynamicArray<T>::size() const {
+const s32 WDynamicArray<T>::size() const {
 	return _size;
 }
 
 template <class T>
-void DynamicArray<T>::push_back(const T &value) {
+void WDynamicArray<T>::push_back(const T &value) {
 
 	// Ensure the array is large enough to contain this data
 	resize();
@@ -140,7 +136,7 @@ void DynamicArray<T>::push_back(const T &value) {
 }
 
 template <class T>
-void DynamicArray<T>::pop_back() {
+void WDynamicArray<T>::pop_back() {
 	if (_size >= 1) {
 		// We can just reduce the used size of the array, as the value
 		// will get overwritten automatically
@@ -149,7 +145,7 @@ void DynamicArray<T>::pop_back() {
 }
 
 template <class T>
-void DynamicArray<T>::insert(const s32 index, const T &value) {
+void WDynamicArray<T>::insert(const s32 index, const T &value) {
 
 	// Bounds check
 	if ((index >= _size) || (_size == 0)) {
@@ -173,7 +169,7 @@ void DynamicArray<T>::insert(const s32 index, const T &value) {
 }
 
 template <class T>
-void DynamicArray<T>::erase(const s32 index) {
+void WDynamicArray<T>::erase(const s32 index) {
 
 	// Bounds check
 	if (index >= _size) return;
@@ -188,7 +184,7 @@ void DynamicArray<T>::erase(const s32 index) {
 }
 
 template <class T>
-void DynamicArray<T>::resize() {
+void WDynamicArray<T>::resize() {
 	// Do we need to redim the array?
 	if (_reservedSize == _size) {
 		
@@ -215,28 +211,28 @@ void DynamicArray<T>::resize() {
 }
 
 template <class T>
-T& DynamicArray<T>::at(const s32 index) const {
+T& WDynamicArray<T>::at(const s32 index) const {
 	return _data[index];
 }
 
 template <class T>
-bool DynamicArray<T>::empty() const {
+bool WDynamicArray<T>::empty() const {
 	return (_size == 0);
 }
 
 template <class T>
-T& DynamicArray<T>::operator[](const s32 index) const {
+T& WDynamicArray<T>::operator[](const s32 index) const {
 	return _data[index];
 }
 
 template <class T>
-void DynamicArray<T>::clear() {
+void WDynamicArray<T>::clear() {
 	// All we need to do is reset the size value
 	_size = 0;
 }
 
 template <class T>
-u32 DynamicArray<T>::begin() const {
+u32 WDynamicArray<T>::begin() const {
 	return 0;
 }
 

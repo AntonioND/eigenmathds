@@ -215,8 +215,8 @@ namespace WoopsiUI {
 		} LongestLine;
 		
 		FontBase* _font;							/**< Font to be used for output */
-		DynamicArray<u32> _linePositions;			/**< Array containing start indexes of each wrapped line */
-		DynamicArray<LongestLine> _longestLines;	/**< Array containing data describing successively longer wrapped lines */
+		WDynamicArray<u32> _linePositions;			/**< Array containing start indexes of each wrapped line */
+		WDynamicArray<LongestLine> _longestLines;	/**< Array containing data describing successively longer wrapped lines */
 		u8 _lineSpacing;							/**< Spacing between lines of text */
 		s32 _textPixelHeight;						/**<Total height of the wrapped text in pixels */
 		u8 _textPixelWidth;							/**< Total width of the wrapped text in pixels */

@@ -17,10 +17,10 @@ Woopsi* Woopsi::singleton = NULL;
 FontBase* Woopsi::_systemFont = NULL;
 
 // Initialise static VBL listener vector
-DynamicArray<WoopsiTimer*> Woopsi::_vblListeners;
+WDynamicArray<WoopsiTimer*> Woopsi::_vblListeners;
 
 // Initialise static deletion queue
-DynamicArray<Gadget*> Woopsi::_deleteQueue;
+WDynamicArray<Gadget*> Woopsi::_deleteQueue;
 
 // Initialise VBL counter
 u32 Woopsi::_vblCount = 0;
@@ -448,7 +448,7 @@ bool Woopsi::flipScreens(Gadget* gadget) {
 void Woopsi::eraseRect(Rect rect) {
 
 	// Create pointer to a vector to store the invalid rectangles
-	DynamicArray<Rect>* invalidRectangles = new DynamicArray<Rect>();
+	WDynamicArray<Rect>* invalidRectangles = new WDynamicArray<Rect>();
 
 	if (invalidRectangles != NULL) {
 		 
